@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="css/owfont-regular.css" />
+    <script
+      src="https://kit.fontawesome.com/8c32bffa9e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>momentum</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="player" id="player">
+        <div class="track-name"></div>
+        <div class="player-main">
+          <div class="player-controls">
+            <button class="play-prev player-icon"></button>
+            <button class="play player-icon"></button>
+            <button class="play-next player-icon"></button>
+          </div>
+          <div class="progres-value">
+            <input type="range" class="progress-bar" value="0" />
+            <span class="current-time"></span>
+            <span class="after-current-time">/</span>
+            <span class="duration-time"></span>
+          </div>
+          <div id="icon-volume" class="ic">
+            <i class="fa-solid fa-volume-high icon-volume"></i>
+          </div>
+          <input type="range" class="volume-range" />
+        </div>
+
+        <ul class="play-list"></ul>
+      </div>
+      <div class="weather">
+        <input type="text" class="city" />
+        <i class="weather-icon owf"></i>
+        <div class="weather-error"></div>
+        <div class="description-container">
+          <span class="temperature"></span>
+          <span class="weather-description"></span>
+        </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="slider-icons">
+        <button class="slide-prev slider-icon"></button>
+        <button class="slide-next slider-icon"></button>
+      </div>
+      <time class="time"></time>
+      <date class="date"></date>
+      <div class="greeting-container">
+        <span class="greeting"></span>
+        <input
+          type="text"
+          class="name"
+          placeholder="[Enter name]"
+          id="placeholderId"
+        />
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="settings">
+        <div class="settings__block">
+          <div class="settings__languge settings__item">
+            <div class="settings__clases" id="settings__language__text">
+              Language:
+            </div>
+            <div class="settings__description">
+              <input
+                type="radio"
+                name="language"
+                checked
+                id="button__language__en"
+              />
+              <label for="language" id="en">en</label>
+              <input type="radio" name="language" id="button__language__ru" />
+              <label for="language" id="ru">ru</label>
+            </div>
+          </div>
+          <div class="settings__images settings__item">
+            <div class="settings__clases" id="settings__image__text">
+              Images source:
+            </div>
+            <div class="settings__description">
+              <input type="radio" name="images" checked id="button__gitHub" />
+              <label for="images" id="gitHub__source">GitHub</label>
+              <input type="radio" name="images" id="button__unsplash" />
+              <label for="images" id="unsplash__source">Unsplash</label>
+              <input type="radio" name="images" id="button__flickr" />
+              <label for="images" id="flickr__source">Flickr</label>
+            </div>
+          </div>
+          <div
+            class="settings__teg settings__item settings__api-teg-none"
+            id="settings__api-teg"
+          >
+            <div class="settings__clases" id="settings__api__text">
+              Api teg:
+            </div>
+            <div class="settings__description">
+              <form id="searching-teg-form">
+                <input type="text" id="search-teg" />
+              </form>
+            </div>
+          </div>
+          <div class="settings__time settings__item">
+            <div class="settings__clases" id="settings__time__text">Time:</div>
+            <div class="settings__description">
+              <input type="radio" name="time" checked id="button__time__yes" />
+              <label for="time" class="yes">yes</label>
+              <input type="radio" name="time" id="button__time__no" />
+              <label for="time" class="no">no</label>
+            </div>
+          </div>
+
+          <div class="settings__date settings__item">
+            <div class="settings__clases" id="settings__date__text">Date:</div>
+            <div class="settings__description">
+              <input type="radio" name="date" checked id="button__date__yes" />
+              <label for="date" class="yes">yes</label>
+              <input type="radio" name="date" id="button__date__no" />
+              <label for="date" class="no">no</label>
+            </div>
+          </div>
+          <div class="settings__greeting settings__item">
+            <div class="settings__clases" id="settings__greeting__text">
+              Greeting:
+            </div>
+            <div class="settings__description">
+              <input
+                type="radio"
+                name="greeting"
+                checked
+                id="button__greeting__yes"
+              />
+              <label for="greeting" class="yes">yes</label>
+              <input type="radio" name="greeting" id="button__greeting__no" />
+              <label for="greeting" class="no">no</label>
+            </div>
+          </div>
+          <div class="settings__quote settings__item">
+            <div class="settings__clases" id="settings__quote__text">
+              Quote:
+            </div>
+            <div class="settings__description">
+              <input
+                type="radio"
+                name="quote"
+                checked
+                id="button__quote__yes"
+              />
+              <label for="quote" class="yes">yes</label>
+              <input type="radio" name="quote" id="button__quote__no" />
+              <label for="quote" class="no">no</label>
+            </div>
+          </div>
+          <div class="settings__weather settings__item">
+            <div class="settings__clases" id="settings__weather__text">
+              Weather:
+            </div>
+            <div class="settings__description">
+              <input
+                type="radio"
+                name="weather"
+                checked
+                id="button__weather__yes"
+              />
+              <label for="weather" class="yes">yes</label>
+              <input type="radio" name="weather" id="button__weather__no" />
+              <label for="weather" class="no">no</label>
+            </div>
+          </div>
+          <div class="settings__audio settings__item">
+            <div class="settings__clases" id="settings__audio__text">
+              Audio:
+            </div>
+            <div class="settings__description">
+              <input
+                type="radio"
+                name="audio"
+                checked
+                id="button__audio__yes"
+              />
+              <label for="audio" class="yes">yes</label>
+              <input type="radio" name="audio" id="button__audio__no" />
+              <label for="audio" class="no">no</label>
+            </div>
+          </div>
+          <div class="settings__todolist settings__item">
+            <div class="settings__clases" id="settings__todolist__text">
+              Todolist:
+            </div>
+            <div class="settings__description">
+              <input
+                type="radio"
+                name="todolist"
+                id="button__todolist__yes"
+                checked
+              />
+              <label for="todolist" class="yes">yes</label>
+              <input type="radio" name="todolist" id="button__todolist__no" />
+              <label for="todolist" class="no">no</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <i class="fa-sharp fa-solid fa-gear settings-icon"></i>
+        </div>
+      </div>
+      <div id="quote-block" class="quote-block">
+        <button class="change-quote"></button>
+        <div>
+          <div class="quote"></div>
+          <div class="author"></div>
+        </div>
+      </div>
+      <div class="todo-block">
+        <div
+          class="todo-block__container todo-block__container-none"
+          id="todo-block__container"
+        >
+          <div id="todo-items-list" class="todo-items-list"></div>
+          <form>
+            <input
+              type="text"
+              placeholder="Enter your task"
+              id="todo-input"
+              class="todo-input"
+              autofocus="on"
+            />
+            <input
+              type="submit"
+              value="add Todo!"
+              id="confirm-input"
+              class="confirm-input"
+            />
+          </form>
+        </div>
+        <div class="todo-block__text" id="todo-block__text">Todo</div>
+      </div>
+      <div>
+        <br />
+        <a
+          class="github-link"
+          href="https://github.com/SvitlanaOrz"
+          target="_blank"
+          >GitHub</a
+        >
+      </div>
+    </footer>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
